@@ -1,6 +1,5 @@
 FROM osrf/ros:melodic-desktop-full
 
-
 RUN apt-get update && apt-get upgrade -y && \
 	apt-get install -y lsb-core g++ openssh-server gedit vim
 
