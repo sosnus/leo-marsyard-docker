@@ -25,5 +25,5 @@ $ xhost +local:`docker inspect --format='{{ .Config.Hostname }}' <CONTAINER_NAME
 
 Then, you can run command in running container:
 ```sh
-$ sudo docker exec -it <CONTAINER_NAME>> /bin/bash
+$ sudo docker exec -it <CONTAINER_NAME> /bin/bash
 ```
