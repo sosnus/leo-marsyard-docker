@@ -27,22 +27,11 @@ $ xhost +local:`docker inspect --format='{{ .Config.Hostname }}' <CONTAINER_NAME
 $ sudo docker exec -it <CONTAINER_NAME> /bin/bash
 ```
 
-6. When in container go to:
-
-```sh
-cd /root/.gazebo/models/terrain/meshes/
-```
-
-7. and download the model of the map:
-```sh
-$ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1BkFel0FbazgMBX4ESszcX8o3YBbMmQ6J' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1BkFel0FbazgMBX4ESszcX8o3YBbMmQ6J" -O model4.obj && rm -rf /tmp/cookies.txt
-```
-
-8. Run Gazebo simulation
+6. Run Gazebo simulation
 ```
 roslaunch leo_gazebo leo_marsyard.launch
 ```
-9. Open another terminal and run rviz
+7. Open another terminal and run rviz
 ```
 roslaunch leo_viz rviz.launch
 ```
