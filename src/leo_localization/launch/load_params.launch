@@ -1,0 +1,5 @@
+<launch>
+    <group>
+        <rosparam file="$(find leo_localization)/config/odometry.yaml" />
+    </group>
+</launch>

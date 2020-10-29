@@ -1,0 +1,17 @@
+global_costmap:
+  global_frame: odom #map
+  robot_base_frame: base_link
+  update_frequency: 1.0
+  publish_frequency: 0.5
+  static_map: false
+  rolling_window: true
+  width: 30
+  height: 30
+  resolution: 0.2
+  transform_tolerance: 0.3
+  always_send_full_costmap: true
+  plugins:
+    - {name: rgbd_obstacle_layer,     type: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"}
+    - {name: inflation_layer,   type: "costmap_2d::InflationLayer"}
+    
+
