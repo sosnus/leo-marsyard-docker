@@ -47,15 +47,3 @@ RUN apt-get update && apt-get install -y python-catkin-tools \
  ros-melodic-tf ros-melodic-octomap*\
  ros-melodic-teb-local-planner* ros-melodic-rtabmap-ros \
   && rm -rf /var/lib/apt/lists/*
-
-# Copy packages and build the workspace
-WORKDIR /catkin_ws
-COPY src ./src
-RUN rosdep install --from-paths src -iy \
-  && rm -rf /var/lib/apt/lists/*
-RUN catkin config --extend /opt/ros/melodic && catkin build
-
-#COPY start.sh /
-
-#ENTRYPOINT []
-#CMD ["/start.sh"]
