@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y gdb gnupg2 apt-transport-https
 
 RUN mkdir -p /catkin_ws/src && cd /catkin_ws/src && git clone https://github.com/PUT-UGV-Team/leo-marsyard.git && mv leo-marsyard/* . && rm -rf leo_marsyard/
 
+COPY ./src/ /catkin_ws/src/
+RUN ls /catkin_ws/src/
+
 RUN mkdir -p /root/.gazebo/models/terrain
 RUN cp -r /catkin_ws/src/leo_gazebo/models/terrain/* /root/.gazebo/models/terrain/
 
