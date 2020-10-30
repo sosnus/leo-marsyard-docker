@@ -1,5 +1,9 @@
 FROM osrf/ros:melodic-desktop-full
 
+COPY ./src/ /catkin_ws/src/
+
+RUN ls /catkin_ws/src/
+
 # Install some basic dependencies
 RUN apt-get update && apt-get -y upgrade && \
   apt-get -y install curl ssh lsb-core g++ openssh-server gedit vim python-pip python3-pip && rm -rf /var/lib/apt/lists/*
