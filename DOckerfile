@@ -1,0 +1,9 @@
+FROM ros:kinetic-ros-core-xenial
+
+RUN apt-get update
+RUN apt install python3-pip -y
+RUN pip3 install paho-mqtt -t /usr/lib/python2.7/dist-packages
+RUN apt install ros-kinetic-usb-cam -y
+RUN apt install ros-kinetic-web-video-server -y
+
+EXPOSE 1883	
